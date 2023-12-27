@@ -1,0 +1,49 @@
+:root {
+  --primary-color: rgb(239, 232, 232);
+  --secondary-color: rgb(7, 149, 7);
+  --font-family: "arial", sans-serif;
+}
+body {
+  background-color: var(--primary-color);
+  font-family: var(--font-family);
+  margin: 60px;
+}
+#slogan {
+  padding: 50px;
+  text-align: left;
+  color: var(--secondary-color);
+  font-size: larger;
+}
+
+#search-bar {
+  text-align: end;
+  padding: 65px;
+}
+
+#post {
+  boder: 20px;
+  text-align: center;
+}
+
+#likes-data {
+  border-style: outset;
+}
+.outset {
+  border-style: outset;
+}
+#comments {
+  border-style: outset;
+}
+#new-creat-post {
+  padding: 80px;
+}
+.submit {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.img-autor {
+  width: 80px;
+  height: 65px;
+  border: 15px;
+  border-radius: 25px;
+}

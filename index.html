@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>O meu blog</title>
     <style>
       img {
         height: 50px;
@@ -13,34 +14,53 @@
   </head>
 
   <body>
+    <div id="slogan">O meu Blog</div>
     <div id="search-bar">
       <input type="text" id="input-search" />
       <button>Pesquisar</button>
     </div>
 
     <article id="posts">
-      <h1>Titulo da Postagem</h1>
+      <div class="outset"><h1>Titulo da Postagem</h1></div>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi commodi
         omnis, distinctio minima accusamus temporibus sequi perferendis hic ex
         totam reprehenderit voluptatem vel eum possimus quia aut tenetur. Nam,
-        quis!
+        quis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nemo
+        qui cupiditate illum dolore necessitatibus! Dolorum quia molestias
+        labore pariatur voluptatibus veniam necessitatibus quidem, accusantium
+        hic molestiae expedita, at asperiores. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Asperiores perspiciatis laborum dolorum
+        commodi voluptatem amet repellat culpa in delectus aspernatur labore cum
+        error, nostrum aliquam eveniet fugit tempora corporis provident.<br />
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+        vero, libero provident beatae laboriosam nisi quas? Totam reiciendis
+        dicta iure eveniet libero, earum laborum harum tenetur impedit ipsa
+        dolores natus.<br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nam magni
+        placeat commodi asperiores, a incidunt voluptas deleniti itaque
+        doloribus ex autem fugiat repellendus quos consectetur? Esse nesciunt
+        minima quam.
       </p>
       <div id="likes-data">
         <p>likes (number)</p>
         <p>DATE</p>
       </div>
+      <br />
       <div id="comments">
-        <img src="https://druk.cc/image/catalog/products/prints/10x10.png" />
+        <img
+        src="https://t.ctcdn.com.br/GcoDwE5pfX70dkeeDLZb3qXpexg=/640x360/smart/i601453.png"
+        / class="img-autor">
         <p>name</p>
         <p>comentario</p>
         <p>date</p>
       </div>
     </article>
-    <div>
+
+    <div id="new-creat-post">
       <p>Criar novo comentario</p>
       <textarea id="new-post-text"></textarea>
-      <button id="submit">Submeter</button>
+      <button class="submit">Submeter</button>
     </div>
   </body>
 </html>
