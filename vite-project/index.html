@@ -9,22 +9,24 @@
 
   <body>
     <div id="slogan">O meu Blog</div>
-    <div id="search-bar">
-      <p id="posts-number">(0) Posts</p>
-      <input type="text" id="input-search" />
-      <button onclick="searchPosts()">Pesquisar</button>
+    <div class="body-feed">
+      <div id="search-bar">
+        <p id="posts-number">(0) Posts</p>
+        <input type="text" id="input-search" />
+        <button class="search-button" onclick="searchPosts()">Pesquisar</button>
+      </div>
+
+      <div id="app"></div>
+
+      <div id="new-creat-post">
+        <p>Criar um novo Post:</p>
+        <label>Título</label>
+        <input type="text" id="new-post-id" />
+
+        <textarea id="new-post-text"></textarea>
+        <button class="submit" onclick="createPost()">Submeter</button>
+      </div>
+      <script type="module" src="/src/main.ts"></script>
     </div>
-
-    <div id="app"></div>
-
-    <div id="new-creat-post">
-      <p>Criar um novo Post:</p>
-      <label>Título</label>
-      <input type="text" id="new-post-id" />
-
-      <textarea id="new-post-text"></textarea>
-      <button class="submit" onclick="createPost()">Submeter</button>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

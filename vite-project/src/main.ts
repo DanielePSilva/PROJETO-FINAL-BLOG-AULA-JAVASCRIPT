@@ -78,11 +78,13 @@ function printPost(posts: Post[], users: User[]) {
   const postsHtml = posts.map((post) => {
     const date = new Date(post.createdAt);
     const postHtml = `
-    <article id="posts">
-      <div class="outset"><h1>${post.title}</h1></div>
-      <p>
+    <article >
+    <div class="border-post">
+      <div class="title-post"><h1>${post.title}</h1></div>
+      <p id="posts">
       ${post.body}
       </p>
+      </div>
       <div id="likes-data">
         <p>likes: ${post.likes.length}</p>
         <p> ${formatDate(date)}</p>

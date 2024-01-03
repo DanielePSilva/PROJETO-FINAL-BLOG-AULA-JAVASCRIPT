@@ -1,38 +1,90 @@
 :root {
-  --primary-color: rgb(239, 232, 232);
-  --secondary-color: rgb(7, 149, 7);
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(123, 7, 149);
   --font-family: "arial", sans-serif;
 }
 body {
   background-color: var(--primary-color);
   font-family: var(--font-family);
-  margin: 60px;
+  padding: 10px;
+}
+
+#app{
+  font-size: larger;
+  padding: 10px;
+}
+.body-feed {
+  margin: 100px;
+ padding: 10px;
+
 }
 #slogan {
-  padding: 50px;
+  padding: 80px;
   text-align: left;
-  color: var(--secondary-color);
-  font-size: larger;
+  color: white;
+  font-size: xx-large;
+  font-weight: bolder;
+  background-color: var(--secondary-color)
 }
 
 #search-bar {
   text-align: end;
-  padding: 65px;
+  padding: 70px;
+}
+#input-search {
+  width: 300px;
+  height: 10px;
+  padding: 10px;
+  border: 5px solid rgb(199, 196, 196);
+  border-radius: 15px;
+  font-size: 18px;
+}
+.search-button {
+  width: 78px;
+  height: 35px;
+  border-radius: 15px;
+background-color: rgb(40, 95, 223);
+color: white;
+font-size: smaller;
+
 }
 
 #post {
-  boder: 20px;
+ 
   text-align: center;
+  padding: 50px;
+  font-size: xx-large;
+
+  
+
+}
+
+.title-post{
+ text-align: center;
+}
+
+.border-post{
+  border-style: double;
+  border: 80px solid: black;
+  padding: 100px;
+  background-color: #fcfcfc;
 }
 
 #likes-data {
-  border-style: outset;
+ flex-direction: column-reverse;
+ border-style: groove;
+
 }
-.outset {
-  border-style: outset;
-}
+
+
 #comments {
-  border-style: outset;
+ flex-direction: column;
+  border-style:double;
+  background-color: rgb(227, 242, 237);
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 15px;
+
 }
 #new-creat-post {
   padding: 80px;
@@ -40,10 +92,36 @@ body {
 .submit {
   background-color: var(--secondary-color);
   color: white;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
 }
 .img-autor {
   width: 80px;
   height: 65px;
   border: 15px;
   border-radius: 25px;
+}
+
+#new-creat-post {
+  text-align: center;
+  font-size:x-large;
+  font-weight: bolder;
+}
+
+#new-post-id {
+  width: 60%;
+  height: 20px;
+  padding: 10px;
+  border: 5px solid: rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: 15px;
+}
+#new-post-text {
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  border: 10px solid:rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: 15px;
 }
