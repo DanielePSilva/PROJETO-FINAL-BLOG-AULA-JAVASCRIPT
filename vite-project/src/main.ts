@@ -74,7 +74,7 @@ function printComment(comments: Comment[], users: User[]) {
 function printPost(posts: Post[], users: User[]) {
   document.querySelector<HTMLDivElement>(
     "#posts-number"
-  )!.innerHTML = `(${posts.length}) Posts`;
+  )!.innerHTML = `${posts.length} Post(s) Encontrado(s)`;
   const postsHtml = posts.map((post) => {
     const date = new Date(post.createdAt);
     const postHtml = `
