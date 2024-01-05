@@ -1,28 +1,5 @@
-import "./style.css";
-
-type User = {
-  id: number;
-  name: string;
-  picture: string;
-};
-
-type Comment = {
-  userId: number;
-  createdAt: string;
-  body: string;
-};
-
-type Post = {
-  title: string;
-  body: string;
-  createdAt: string;
-  likes: number[];
-  comments: Comment[];
-};
-
-var posts: Post[] = [];
-var users: User[] = [];
-
+var posts = [];
+var users = [];
 function fetchData() {
   Promise.all([
     fetch(
@@ -39,20 +16,18 @@ function fetchData() {
     printPost(posts, users);
   });
 }
-
 function searchPosts() {
   const searchText = document.getElementById("input-search").value;
   if (searchText.length > 0) {
     const filteredPosts = posts.filter(
-      (post) => post.title.includes(searchText) // trocamos o search includes
+      (post) => post.title.search(searchText) > 0
     );
     printPost(filteredPosts, users);
   } else {
     printPost(posts, users);
   }
 }
-
-function printComment(comments: Comment[], users: User[]) {
+function printComment(comments, users) {
   const commentsHtml = comments.map((comment) => {
     const user = users.find((user) => user.id == comment.userId);
     const date = new Date(comment.createdAt);
@@ -61,28 +36,19 @@ function printComment(comments: Comment[], users: User[]) {
       class="img-autor"
       src="${user.picture}"
     />
-    <div class="coment-flex">
     <p> ${user.name}</p>
     <p>${comment.body}</p>
-    <p>${date.toLocaleString("pt", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-    })}</p>
-    </div>
+    <p>${formatDate(date)}</p>
   </div>
     `;
     return commentHtml;
   });
   return commentsHtml;
 }
-
-function printPost(posts: Post[], users: User[]) {
-  document.querySelector<HTMLDivElement>(
+function printPost(posts, users) {
+  document.querySelector(
     "#posts-number"
-  )!.innerHTML = `${posts.length} Post(s) Encontrado(s)`;
+  ).innerHTML = `${posts.length} Post(s) Encontrado(s)`;
   const postsHtml = posts.map((post) => {
     const date = new Date(post.createdAt);
     const postHtml = `
@@ -95,13 +61,7 @@ function printPost(posts: Post[], users: User[]) {
       </div>
       <div id="likes-data">
         <p>likes: ${post.likes.length}</p>
-      <p>${date.toLocaleString("pt", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-      })}</p>
+        <p> ${formatDate(date)}</p>
       </div>
       <br />
       ${printComment(post.comments, users).join("")}
@@ -109,51 +69,44 @@ function printPost(posts: Post[], users: User[]) {
     `;
     return postHtml;
   });
-  document.querySelector<HTMLDivElement>("#app")!.innerHTML =
-    postsHtml.join("");
+  document.querySelector("#app").innerHTML = postsHtml.join("");
 }
-// //function formatDate(date: Date) {
-//   var months: any = {
-//     0: "Janeiro",
-//     1: "Fevereiro",
-//     2: "Março",
-//     3: "Abril",
-//     4: "Maio",
-//     5: "Junho",
-//     6: "Jullho",
-//     7: "Agosto",
-//     8: "Setembro",
-//     9: "Outubro",
-//     10: "Novembro",
-//     11: "Dezembro",
-//   };
-//   return `${date.getDay()} de ${
-//     months[date.getMonth()]
-//   } de ${date.getFullYear()}, ${date.getHours()}h${date.getMinutes()}`;
-// }//
-
+function formatDate(date) {
+  var months = {
+    0: "Janeiro",
+    1: "Fevereiro",
+    2: "Março",
+    3: "Abril",
+    4: "Maio",
+    5: "Junho",
+    6: "Jullho",
+    7: "Agosto",
+    8: "Setembro",
+    9: "Outubro",
+    10: "Novembro",
+    11: "Dezembro",
+  };
+  return `${date.getDay()} de ${
+    months[date.getMonth()]
+  } de ${date.getFullYear()}, ${date.getHours()}h${date.getMinutes()}`;
+}
 function createPost() {
   alert(1);
   const title = document.getElementById("new-post-id").value;
   const newTextPost = document.getElementById("new-post-text").value;
   const date = new Date();
-
-  const newPost: Post = {
+  const newPost = {
     title: title,
     body: newTextPost,
     likes: [],
     comments: [],
     createdAt: date.toISOString(),
   };
-
   posts.push(newPost);
   printPost(posts, users);
-
   document.getElementById("new-post-id").value = "";
   document.getElementById("new-post-text").value = "";
 }
-
 fetchData();
-
 window.createPost = createPost;
 window.searchPosts = searchPosts;

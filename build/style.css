@@ -1,21 +1,22 @@
 :root {
   --primary-color: rgb(255, 255, 255);
-  --secondary-color: rgb(79, 6, 96);
+  --secondary-color: rgb(123, 7, 149);
   --font-family: "arial", sans-serif;
 }
 body {
   background-color: var(--primary-color);
   font-family: var(--font-family);
-  margin: 0%;
+  padding: 10px;
 }
 
-#app {
+#app{
   font-size: larger;
-  padding: 30px;
+  padding: 10px;
 }
 .body-feed {
   margin: 100px;
-  padding: 10px;
+ padding: 10px;
+
 }
 #slogan {
   padding: 80px;
@@ -23,7 +24,7 @@ body {
   color: white;
   font-size: xx-large;
   font-weight: bolder;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color)
 }
 
 #search-bar {
@@ -42,55 +43,51 @@ body {
   width: 78px;
   height: 35px;
   border-radius: 15px;
-  background-color: rgb(40, 95, 223);
-  color: white;
-  font-size: smaller;
+background-color: rgb(40, 95, 223);
+color: white;
+font-size: smaller;
+
 }
 
 #post {
+ 
   text-align: center;
   padding: 50px;
   font-size: xx-large;
+
+  
+
 }
 
-.title-post {
-  text-align: center;
+.title-post{
+ text-align: center;
 }
 
-.border-post {
+.border-post{
   border-style: double;
   border-radius: 10px;
   padding: 100px;
-  background-color: #dfe8e9;
+  background-color: #fcfcfc;
 }
 
 #likes-data {
-  display: flex;
-  justify-content: space-between;
-  border-radius: 10px;
-  border: 2px solid black;
-  padding: 10px;
+ flex-direction: column-reverse;
+ border-style: groove;
+ border-radius: 10px;
+ padding: 30px;
+ 
+
 }
 
+
 #comments {
-  display: flex;
-  border-style: double;
+ flex-direction: column;
+  border-style:double;
   background-color: rgb(227, 242, 237);
-  border-radius: 60px;
-  padding: 30px;
-  font-size: 16px;
-  margin: 25px;
-  margin-right: 10px;
-}
-.comment-flex {
-  display: flex;
-}
-.img-autor {
-  width: 80px;
-  height: 80px;
-  border: 15px;
-  border-radius: px;
-  margin: 10px;
+  border-radius: 50px;
+  padding: 16px;
+  font-size: 15px;
+
 }
 #new-creat-post {
   padding: 80px;
@@ -102,10 +99,16 @@ body {
   width: 100px;
   border-radius: 10px;
 }
+.img-autor {
+  width: 80px;
+  height: 65px;
+  border: 15px;
+  border-radius: 25px;
+}
 
 #new-creat-post {
   text-align: center;
-  font-size: x-large;
+  font-size:x-large;
   font-weight: bolder;
 }
 
@@ -113,6 +116,7 @@ body {
   width: 60%;
   height: 20px;
   padding: 10px;
+  border: 5px solid: rgb(0, 0, 0);
   border-radius: 20px;
   margin: 15px;
 }
@@ -120,6 +124,7 @@ body {
   width: 100%;
   height: 150px;
   padding: 20px;
+  border: 10px solid:rgb(0, 0, 0);
   border-radius: 20px;
   margin: 15px;
 }
