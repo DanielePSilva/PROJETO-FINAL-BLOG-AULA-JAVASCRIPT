@@ -61,7 +61,7 @@ function printComment(comments: Comment[], users: User[]) {
       class="img-autor"
       src="${user.picture}"
     />
-    <div class="coment-flex">
+    <div class="comment-flex">
     <p> ${user.name}</p>
     <p>${comment.body}</p>
     <p>${date.toLocaleString("pt", {
