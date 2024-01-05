@@ -112,25 +112,6 @@ function printPost(posts: Post[], users: User[]) {
   document.querySelector<HTMLDivElement>("#app")!.innerHTML =
     postsHtml.join("");
 }
-// //function formatDate(date: Date) {
-//   var months: any = {
-//     0: "Janeiro",
-//     1: "Fevereiro",
-//     2: "Março",
-//     3: "Abril",
-//     4: "Maio",
-//     5: "Junho",
-//     6: "Jullho",
-//     7: "Agosto",
-//     8: "Setembro",
-//     9: "Outubro",
-//     10: "Novembro",
-//     11: "Dezembro",
-//   };
-//   return `${date.getDay()} de ${
-//     months[date.getMonth()]
-//   } de ${date.getFullYear()}, ${date.getHours()}h${date.getMinutes()}`;
-// }//
 
 function createPost() {
   alert(1);
